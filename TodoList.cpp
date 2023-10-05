@@ -3,6 +3,7 @@
 #include <sstream>
 #include <vector>
 #include <algorithm>
+#include <windows.h>
 using namespace std;
 struct Task {
     string title;
@@ -166,8 +167,90 @@ void printFavoriteTasks(const vector<Task>& tasks) {
         }
     }
 }
+// Функция для поиска задач по названию
+void findName(const vector<Task>& tasks) {
+    cout << "Введите название задачи которую хотите найти" << endl;
+    string str;
+    cin >> str;
+    int i = 0;
+    for (const Task& task : tasks) {
+        if (task.title == str) {
+            cout << "Название: " << task.title << " | ";
+            cout << "Дата: " << task.date << " | ";
+            cout << "Приоритет: " << task.priority << " | ";
+            cout << "Избранная: " << (task.favorite ? "Да" : "Нет") << " | ";
+            cout << "Описание: " << task.description << endl;
+            i += 1;
+        }
+    }
+    if (i == 0) {
+        cout << "Задачи с таким названием отсутствует";
+    }
+}
+// Функция для поиска задач по приоритету
+void findPriority(const vector<Task>& tasks) {
+    cout << "Введите приоритет задач которые хотите найти" << endl;
+    int str;
+    cin >> str;
+    int i = 0;
+    for (const Task& task : tasks) {
+        if (task.priority == str) {
+            cout << "Название: " << task.title << " | ";
+            cout << "Дата: " << task.date << " | ";
+            cout << "Приоритет: " << task.priority << " | ";
+            cout << "Избранная: " << (task.favorite ? "Да" : "Нет") << " | ";
+            cout << "Описание: " << task.description << endl;
+            i += 1;
+        }
+    }
+    if (i == 0) {
+        cout << "Задачи с таким приоритетом отсутствуют";
+    }
+}
+// Функция для поиска задач по описанию
+void findDescription(const vector<Task>& tasks) {
+    cout << "Введите описание или часть описания для нахождения задачи" << endl;
+    string str;
+    cin >> str;
+    int i = 0;
+    for (const Task& task : tasks) {
+        if (task.description.find(str)) {
+            cout << "Название: " << task.title << " | ";
+            cout << "Дата: " << task.date << " | ";
+            cout << "Приоритет: " << task.priority << " | ";
+            cout << "Избранная: " << (task.favorite ? "Да" : "Нет") << " | ";
+            cout << "Описание: " << task.description << endl;
+            i += 1;
+        }
+    }
+    if (i == 0) {
+        cout << "Задачи с таким описанием отсутствуют";
+    }
+}
+// Функция для поиска задач по дате и времени
+void findDateandTime(const vector<Task>& tasks) {
+    cout << "Введите дату и время задачи которую хотите найти"<<endl;
+    string str;
+    cin >> str;
+    int i = 0;
+    for (const Task& task : tasks) {
+        if (task.date == str) {
+            cout << "Название: " << task.title << " | ";
+            cout << "Дата: " << task.date << " | ";
+            cout << "Приоритет: " << task.priority << " | ";
+            cout << "Избранная: " << (task.favorite ? "Да" : "Нет") << " | ";
+            cout << "Описание: " << task.description << endl;
+            i += 1;
+        }
+    }
+    if (i == 0) {
+        cout << "Задачи с такой датой отсутствуют";
+    }
+}
 int main() {
     setlocale(LC_ALL, "rus");
+    SetConsoleCP(1251);
+    SetConsoleOutputCP(1251);
     vector<Task> tasks;
     string filename = "tasks.csv";
     tasks = loadTasksFromFile(filename);
@@ -181,6 +264,10 @@ int main() {
         cout << "6. Отсортировать задачи по дате" << endl;
         cout << "7. Отсортировать задачи по приоритету" << endl;
         cout << "8. Показать избранные задачи" << endl;
+        cout << "9. Найти задач по названию" << endl;
+        cout << "10. Найти задачи по приоритету" << endl;
+        cout << "11. Найти задачи по описанию" << endl;
+        cout << "12. Найти задачи по дате и времени " << endl;
         cout << "0. Выйти" << endl;
         cout << "Выберите действие: ";
 
@@ -220,6 +307,18 @@ int main() {
             break;
         case 8:
             printFavoriteTasks(tasks);
+            break;
+        case 9:
+            findName(tasks);
+            break;
+        case 10:
+            findPriority(tasks);
+            break;
+        case 11:
+            findDescription(tasks);
+            break;
+        case 12:
+            findDateandTime(tasks);
             break;
         default:
             cout << "Некорректный выбор. Пожалуйста, выберите существующую опцию." << endl;
