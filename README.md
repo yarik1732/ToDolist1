@@ -23,3 +23,19 @@
 ##### hi [Y](https://github.com/yarik1732)
 ##### hi [V](https://www.youtube.com/watch?v=5Fg9oZk-5uA)
 ##### hi [D](https://github.com/Hackep1551)
+
+
+<picture>
+  <source
+    media="(prefers-color-scheme: dark)"
+    srcset="https://raw.githubusercontent.com/platane/snk/output/github-contribution-grid-snake-dark.svg"
+  />
+  <source
+    media="(prefers-color-scheme: light)"
+    srcset="https://raw.githubusercontent.com/platane/snk/output/github-contribution-grid-snake.svg"
+  />
+  <img
+    alt="github contribution grid snake animation"
+    src="https://raw.githubusercontent.com/platane/snk/output/github-contribution-grid-snake.svg"
+  />
+</picture>
