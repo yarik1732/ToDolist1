@@ -1,7 +1,7 @@
-# snk
 
+[![Typing SVG](https://readme-typing-svg.herokuapp.com?color=%2336BCF7&lines=+)](https://git.io/typing-svg)
 
-[![Typing SVG](https://readme-typing-svg.herokuapp.com?color=%2336BCF7&lines=ToDo+list+без+графического+интерфейса+++++)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.herokuapp.com?color=%6900C6&lines=ToDo+list+без+графического+интерфейса+++++)](https://git.io/typing-svg)
 
 <h2 align="center"> 
     <a href="https://github.com/yarik1732/cvfyf" target="_blank"> название пр</a>
@@ -12,7 +12,7 @@
 
 <h4 align="center">тут примеры кода</h4>
 
-<img src="">
+<img src="https://www.bethowen.ru/upload/iblock/3cc/3cc0e2305bb62234b32678027ef738ea.jpg">
 
 
 
